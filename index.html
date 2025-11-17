@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Maria | Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+
+            <li>
+                <a href="#servico" class="menu-link">Serviços</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/logo2.jpg" alt="Foto de Maria Eduarda" class="foto-perfil">
+        <h1>Maria Eduarda</h1>
+        <p class="cabecalho-sub-titulo">Nail designer</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou Maria Eduarda, sua designer de unhas. Realizo trabalhos com unhas de gel nos tamanhos pequeno e
+                médio, sempre buscando um resultado bonito, confortável e com aparência natural. Também sou
+                especializada em banho de gel, uma ótima opção para quem deseja fortalecer as unhas e manter um
+                acabamento perfeito sem a necessidade de alongamento.
+            </p>
+        </div>
+    </section>
+
+    <section id="servico" class="servico">
+        <h2 class="servico-titulo">Meus Serviços</h2>
+
+        <div class="servicos-container">
+
+            <div class="servico-card">
+                <img src="img/red.jpg" alt="servico 1" class="servico-imagem">
+                <div class="caixa-textos-servico">
+                    <h3 class="info-servicos">Molde F1</h3>
+
+                    <p class="paragrafo-servicos">
+                        O molde F1 ajuda a modelar as unhas com facilidade, deixando o gel no formato certinho e
+                        garantindo
+                        um resultado natural e bonito.
+                    </p>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <img src="img/white.jpg" alt="servico 2" class="servico-imagem">
+                <div class="caixa-textos-servico">
+                    <h3 class="info-servicos">Molde F1</h3>
+
+                    <p class="paragrafo-servicos">
+                        O molde F1 ajuda a deixar todas as unhas iguais, no mesmo formato e no mesmo padrão, trazendo um
+                        acabamento mais certinho e harmonioso no resultado final.
+                    </p>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <img src="img/yellow.jpg" alt="servico 3" class="servico-imagem">
+                <div class="caixa-textos-servico">
+                    <h3 class="info-servicos">Banho em Gel</h3>
+
+                    <p class="paragrafo-servicos">
+                        O banho em gel é ótimo para fortalecer as unhas, deixando um acabamento natural, bonito e
+                        duradouro
+                        sem precisar de alongamento.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato
+            <form class="formulario-contato" id="formulario-contato" onsubmit="enviarWhats(event)">
+                <div class="grupo-form">
+                    <input placeholder="Nome" class="campo-form" id="nome">
+                </div>
+
+                <div class="grupo-form">
+                    <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+                </div>
+
+                <button type="submit" class="botao-form">Enviar Whatsapp</button>
+            </form>
+        </h2>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5527996136836'
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent(texto)
+
+
+        const url = `https://wa.me/${telefone}/?text=${msgFormatada}`
+
+        console.log(url)
+
+        window.open(url, '_blank')
+        }
+
+    </script>
+</body>
+
+</html>
